@@ -16,12 +16,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 	size_t	j;
-	size_t	k;
 	size_t	len_src;
 
 	i = 0;
 	j = 0;
-	k = 0;
 	len_src = 0;
 	while (src[len_src])
 		len_src++;
@@ -39,6 +37,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dst[i] = 0;
 	return (i);
 }
+/*
 #include <bsd/string.h>
 #include <unistd.h>
 #include <stdio.h>
@@ -56,3 +55,4 @@ int	main(void)
 	}
 	return (0);
 }
+*/
