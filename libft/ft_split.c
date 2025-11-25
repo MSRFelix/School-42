@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: flanghof <flanghof@student.42berlin.d      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/24 15:52:40 by flanghof          #+#    #+#             */
+/*   Updated: 2025/11/24 15:54:24 by flanghof         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 
 static void	ft_strdup(char *curr, char const *str, int len, int curr_pos);
@@ -91,7 +103,7 @@ char	**ft_split(char const *s, char c)
 int     main(int argc, char *argv[])
 {
         int     i = 0;
-        char    *str = " This    is a  hell lot offfg woordsss !";
+        char    *str = " This   t is a  hell lot oftffg woordsss !";
         char    splitter = 't';
         char    **arr;
         if (argc != 2)

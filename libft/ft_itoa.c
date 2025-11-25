@@ -1,46 +1,72 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: flanghof <flanghof@student.42berlin.d      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/24 15:52:11 by flanghof          #+#    #+#             */
+/*   Updated: 2025/11/24 18:19:06 by flanghof         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 
-static int	ft_intlen(int n)
+static char	*return_sol(int n)
 {
-	int	neg;
-
-	neg = 0;
-	if (n < 0)
+	char	*sol;
+	if (n == -2147483648)
+		sol = malloc(12);
+		sol = "-2147483648";
+		return (sol);
+	if (n == 0)
 	{
-		neg = 1;
-		n *= -1;
+		sol = malloc(2);
+		sol = "0";
+		return (sol);
 	}
-	if (n < 10)
-		return (1 + neg);
-	else if (n < 100)
-		return (2 + neg);
-	else if (n < 1000)
-		return (3 + neg);
-	else if (n < 10000)
-		return (4 + neg);
-	else if (n < 100000)
-		return (5 + neg);
-	else if (n < 1000000)
-		return (6 + neg);
-	else if (n < 10000000)
-		return (7 + neg);
-	else if (n < 100000000)
-		return (8 + neg);
-	else if (n < 1000000000)
-		return (9 + neg);
-	else
-		return (10 + neg);
+	return (sol);
 }
 
 char	*ft_itoa(int n)
 {
-	char	*sol;
 	char	buffer[12];
+	char	*sol;
 	int		i;
 	int		j;
+	int		neg;
 
 	i = 0;
-	j = 0;
+	neg = 0;
+	if (n == -2147483648)
+		return (return_sol(-2147483648));
+	else if (n == 0)
+		return(return_sol(0));
+	else
+	{
+		if (n < 0)
+		{
+			j++;
+			neg = 1;
+			n = -n;
+		}
+		while (n > 0)
+		{
+			buffer[i] = (n % 10 + '0');
+			n /= 10;
+			i++;
+		}
+		while (--i >= 0)
+		{
+			sol[j] = buffer[i];
+			j++;
+		}
+		if (neg)
+			sol[0] = '-';
+	}
+	return (sol);
+}
+
 	sol = malloc(ft_intlen(n) + 1);
 	if (!(sol))
 		return (0);
@@ -71,7 +97,7 @@ char	*ft_itoa(int n)
 	}
 	return (sol);
 }
-
+/*
 #include <stdio.h>
 #include <string.h>
 int	main(int argc, char *argv[])
@@ -87,5 +113,4 @@ int	main(int argc, char *argv[])
 		printf("%s\n", ft_itoa(number));
 	return (0);
 }
-
-
+*/

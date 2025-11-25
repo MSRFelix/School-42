@@ -3,7 +3,7 @@ SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c f
 OBJS = $(SRCS:.c=.o)
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -I includes
+CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 RM = rm -f
 
@@ -11,7 +11,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
-srcs/%.o: srcs/%.c inlcudes/ft.h
+%.o: %.c 
 	$(CC) $(CFLAGS) -c $< -o $@
 clean:
 	$(RM) $(OBJS)

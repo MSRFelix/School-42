@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: flanghof <flanghof@student.42berlin.d      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/24 15:52:56 by flanghof          #+#    #+#             */
+/*   Updated: 2025/11/24 17:56:11 by flanghof         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 
 static int	ft_len(const char *s1)
@@ -52,24 +64,25 @@ char	*ft_strtrim(char const *s1, char const *set)
 	sol = malloc(end - i + 1);
 	if (!(sol))
 		return (0);
-	while (i < end)
+	while (i < end + 1)
 	{
 		sol[j] = s1[i];
 		i++;
 		j++;
 	}
+	sol[j] = 0;
 	return (sol);
 }
-
+/*
 #include <stdio.h>
 
 int	main(void)
 {
-	char const set[] = "f";
-	char const text[] = "Heashgrf";
+	char const set[] = "gf";
+	char const text[] = "gffHeashgrfff";
 	char	*sol = ft_strtrim(text, set);
 	printf("%s", sol);
 	free(sol);
 	return (0);
 }
-
+*/

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: flanghof <flanghof@student.42berlin.d      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/24 16:03:45 by flanghof          #+#    #+#             */
+/*   Updated: 2025/11/24 16:21:02 by flanghof         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 static int	ft_isspace(const char *nptr)
 {
 	int	i;
@@ -34,6 +46,7 @@ int	ft_atoi(const char *nptr)
 	}
 	return (sol * neg);
 }
+/*
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -46,3 +59,4 @@ int	main(int argc, char *argv[])
 	}
 	return (0);
 }
+*/

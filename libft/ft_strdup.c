@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: flanghof <flanghof@student.42berlin.d      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/24 15:53:43 by flanghof          #+#    #+#             */
+/*   Updated: 2025/11/24 15:53:46 by flanghof         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 
 char	*ft_strdup(const char *s)
@@ -11,8 +23,8 @@ char	*ft_strdup(const char *s)
 	while (s[i] != 0)
 		i++;
 	storage = malloc((i + 1) * sizeof(char));
-	if (storage == NULL)
-		return (NULL);
+	if (!(storage))
+		return (0);
 	else
 	{
 		while (j < i)
