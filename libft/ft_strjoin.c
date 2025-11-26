@@ -29,17 +29,16 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		len2;
 	char	*sol;
 
-	i = 0;
+	if (!s1 || !s2)
+		return (0);
+	i = -1;
 	len1 = ft_len(s1);
 	len2 = ft_len(s2);
 	sol = malloc(len1 + len2 + 1);
 	if (!(sol))
 		return (0);
-	while (i < len1)
-	{
+	while (++i < len1)
 		sol[i] = s1[i];
-		i++;
-	}
 	i = 0;
 	while (i < len2)
 	{

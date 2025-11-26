@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_calloc(size_t nelem, size_t elsize)
 {
@@ -19,11 +18,13 @@ void	*ft_calloc(size_t nelem, size_t elsize)
 	unsigned char	*a;
 
 	i = 0;
+	if (nelem == 0 || elsize == 0)
+		return (0);
+	if (nelem != 0 && elsize != 0 && nelem > SIZE_MAX / elsize)
+		return (0);
 	a = malloc(nelem * elsize);
 	if (!(a))
 		return (0);
-	if (nelem == 0 || elsize == 0)
-		return (a);
 	while (i < nelem * elsize)
 	{
 		a[i] = 0;
