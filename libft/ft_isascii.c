@@ -16,3 +16,25 @@ int	ft_isascii(int c)
 		return (0);
 	return (1);
 }
+/*
+#include <stdio.h>
+#include <ctype.h>
+int	main(void)
+{
+	printf("mine: %i\n", ft_isascii('a'));
+	printf("original: %i\n", isascii('a'));
+	printf("mine: %i\n", ft_isascii('A'));
+	printf("original: %i\n", isascii('A'));
+	printf("mine: %i\n", ft_isascii('§'));
+	printf("original: %i\n", isascii('§'));
+	printf("mine: %i\n", ft_isascii('t'));
+	printf("original: %i\n", isascii('t'));
+	printf("mine: %i\n", ft_isascii(' '));
+	printf("original: %i\n", isascii(' '));
+	printf("mine: %i\n", ft_isascii('5'));
+	printf("original: %i\n", isascii('5'));
+	printf("mine: %i\n", ft_isascii('ä'));
+	printf("original: %i\n", isascii('ä'));
+	return (0);
+}
+*/	

@@ -16,3 +16,27 @@ int	ft_isdigit(int c)
 		return (1);
 	return (0);
 }
+/*
+#include <stdio.h>
+#include <ctype.h>
+int	main(void)
+{
+	printf("%i\n", ft_isdigit('a'));
+	printf("%i\n", isdigit('a'));
+	printf("%i\n", ft_isdigit('A'));
+	printf("%i\n", isdigit('A'));
+	printf("%i\n", ft_isdigit('1'));
+	printf("%i\n", isdigit('1'));
+	printf("%i\n", ft_isdigit('0'));
+	printf("%i\n", isdigit('0'));
+	printf("%i\n", ft_isdigit('2'));
+	printf("%i\n", isdigit('2'));
+	printf("%i\n", ft_isdigit('$'));
+	printf("%i\n", isdigit('$'));
+	printf("%i\n", ft_isdigit('J'));
+	printf("%i\n", isdigit('J'));
+	printf("%i\n", ft_isdigit('ä'));
+	printf("%i\n", isdigit('ä'));
+	return (0);
+}
+*/
