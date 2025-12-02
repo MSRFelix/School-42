@@ -6,7 +6,7 @@
 /*   By: flanghof <flanghof@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 12:14:53 by flanghof          #+#    #+#             */
-/*   Updated: 2025/11/18 12:18:59 by flanghof         ###   ########.fr       */
+/*   Updated: 2025/12/01 14:48:00 by flanghof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,9 @@ int	ft_isprint(int c)
 		return (4);
 	else if (c >= 97 && c <= 122)
 		return (2);
-
 	return (0);
 }
-
+/*
 #include <stdio.h>
 #include <ctype.h>
 int	main(void)
@@ -40,3 +39,4 @@ int	main(void)
 	printf("original: %i\n", isprint('V'));
 	return (0);
 }
+*/

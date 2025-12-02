@@ -6,7 +6,7 @@
 /*   By: flanghof <flanghof@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 12:11:45 by flanghof          #+#    #+#             */
-/*   Updated: 2025/11/18 12:14:08 by flanghof         ###   ########.fr       */
+/*   Updated: 2025/12/01 14:47:04 by flanghof         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,16 @@ int	main(void)
 	printf("original: %i\n", isascii('a'));
 	printf("mine: %i\n", ft_isascii('A'));
 	printf("original: %i\n", isascii('A'));
-	printf("mine: %i\n", ft_isascii('§'));
-	printf("original: %i\n", isascii('§'));
+//	printf("mine: %i\n", ft_isascii('§'));
+//	printf("original: %i\n", isascii('§'));
 	printf("mine: %i\n", ft_isascii('t'));
 	printf("original: %i\n", isascii('t'));
 	printf("mine: %i\n", ft_isascii(' '));
 	printf("original: %i\n", isascii(' '));
-	printf("mine: %i\n", ft_isascii('5'));
-	printf("original: %i\n", isascii('5'));
-	printf("mine: %i\n", ft_isascii('ä'));
-	printf("original: %i\n", isascii('ä'));
+	printf("mine: %i\n", ft_isascii('~'));
+	printf("original: %i\n", isascii('~'));
+//	printf("mine: %i\n", ft_isascii('ä'));
+//	printf("original: %i\n", isascii('ä'));
 	return (0);
 }
-*/	
+*/
