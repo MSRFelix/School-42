@@ -15,15 +15,19 @@
 void	*ft_calloc(size_t nelem, size_t elsize)
 {
 	size_t			i;
+	size_t			total;
 	unsigned char	*a;
 
 	i = 0;
 	if (nelem == 0 || elsize == 0)
+		return (malloc(1));
+	total = nelem * elsize;
+	if (nelem != 0 && total / nelem != elsize)
 		return (0);
-	a = malloc(nelem * elsize);
-	if (!(a))
+	a = malloc(total);
+	if (!a)
 		return (0);
-	while (i < nelem * elsize)
+	while (i < total)
 	{
 		a[i] = 0;
 		i++;

@@ -14,18 +14,16 @@
 
 static int	ft_charcmp(char const *set, char c)
 {
-	int	found;
 	int	j;
 
-	found = 0;
 	j = 0;
 	while (set[j])
 	{
 		if (set[j] == c)
-			found = 1;
+			return (1);
 		j++;
 	}
-	return (found);
+	return (0);
 }
 
 static unsigned int	find_start(char const *s1, char const *set)
@@ -42,12 +40,13 @@ static unsigned int	find_start(char const *s1, char const *set)
 	return (i);
 }
 
-static unsigned int	find_end(unsigned int end, char const *s1, char const *set)
+static int	find_end(int end, char const *s1, char const *set)
 {
-	while (end-- > 0)
+	while (end >= 0)
 	{
 		if (!(ft_charcmp(set, s1[end])))
 			break ;
+		end--;
 	}
 	return (end);
 }
@@ -56,19 +55,19 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	unsigned int	i;
 	unsigned int	j;
-	unsigned int	end;
+	int				end;
 	char			*sol;
 
-	end = (unsigned int) ft_strlen(s1);
+	end = find_end((int) ft_strlen(s1) - 1, s1, set);
 	i = find_start(s1, set);
 	j = 0;
 	end = find_end(end, s1, set);
-	if (end < i)
-		return (0);
-	sol = malloc(end - i + 1);
+	if (end < 0 || end < (int) i)
+		return (ft_strdup(""));
+	sol = malloc(end - i + 2);
 	if (!(sol))
 		return (0);
-	while (i < end + 1)
+	while (i <= (unsigned int) end)
 	{
 		sol[j] = s1[i];
 		i++;

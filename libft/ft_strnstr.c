@@ -19,23 +19,21 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	char	*hay;
 	char	*needle;
 
-	i = -1;
+	i = 0;
 	j = 0;
 	hay = (char *) big;
 	needle = (char *) little;
 	if (!(needle[0]))
 		return (hay);
-	while (++i < len - 1)
+	while (i < len && hay[i])
 	{
-		if (hay[i] == needle[j])
-		{
-			j = 0;
-			while (hay[i + j] && needle[j] && i + j < len
-				&& hay[i + j] == needle[j])
-				j++;
-			if (needle[j] == 0 && i + j < len)
-				return (&hay[i]);
-		}
+		j = 0;
+		while (i + j < len && hay[i + j] && needle[j]
+			&& hay[i + j] == needle[j])
+			j++;
+		if (needle[j] == 0)
+			return (&hay[i]);
+		i++;
 	}
 	return (0);
 }

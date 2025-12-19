@@ -10,14 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	unsigned char	uc;
+	size_t			i;
 
+	uc = (unsigned char) c;
 	i = 0;
-	while (s[i] && s[i] != c)
+	while (s[i] && (unsigned char) s[i] != uc)
 		i++;
-	if (s[i] == 0 && c != 0)
+	if ((unsigned char) s[i] == 0 && uc != 0)
 		return (0);
 	return ((char *)& s[i]);
 }
