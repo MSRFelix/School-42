@@ -1,30 +1,49 @@
-#include "libftprintf.h"
+#include "ft_printf.h"
 
-void	ft_check_var(char c)
+static int	ft_check_var(char c, va_list *args)
 {
 	if (c == 'c')
-		ft_print_char(c);
+		return (ft_print_char(va_arg(*args, int)));
+	if (c == 's')
+		return (ft_print_str(va_arg(*args, char *)));
+	if (c == 'd' || c == 'i')
+		return (ft_print_nbr(va_arg(*args, int)));
+	if (c == 'u')
+		return (ft_print_unsigned(va_arg(*args, unsigned int)));
+	if (c == 'x' || c == 'X')
+		return (ft_print_hex(va_arg(*args, unsigned int), c));
+	if (c == 'p')
+		return (ft_print_ptr(va_arg(*args, void *)));
+	if (c == '%')
+		return (write(1, "%", 1));
+	return (0);
 }
 
-int	ft_printf(const char input*, ...)
+int	ft_printf(const char *input, ...)
 {
-	int	i;
-	int	param;
+	int		i;
+	int		count;
 	va_list	args;
 
-	va_start(args, input);
+	i = 0;
+	count = 0;
 	if (!input)
 		return (0);
+	va_start(args, input);
 	while (input[i])
 	{
 		if (input[i] == '%')
 		{
 			i++;
-			ft_check_var(input[i], args);
+			count += ft_check_var(input[i], &args);
 		}
 		else
+		{
 			write(1, &input[i], 1);
+			count++;
+		}
 		i++;
 	}
-	return (0);
+	va_end(args);
+	return (count);
 }
